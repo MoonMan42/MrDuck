@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MrDuck.Services\MrDuck.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="MrDuckSettings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>

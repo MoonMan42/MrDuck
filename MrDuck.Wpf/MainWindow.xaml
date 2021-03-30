@@ -9,14 +9,22 @@
         AllowsTransparency="True"
         WindowStyle="None"
         MouseDown="MoveWindow_MouseDown"
+        KeyDown="StopFakeWork_KeyDown"
         Background="Transparent"
          Height="120" Width="100">
     <Grid>
         <Image Source="/Images/rubberDuck2.png" >
             <Image.ContextMenu>
                 <ContextMenu>
+                    <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 
+                              Checked="MrDuckStayAwake_Checked" Unchecked="MrDuckStayAwake_Checked" />
+                    
+                    <MenuItem x:Name="MrDuckFakeWorkCheck" Header="Fake Work" IsCheckable="True"
+                              Checked="MrDuckFakeWork_Checked" Unchecked="MrDuckFakeWork_Checked"/>
+                    
                     <MenuItem x:Name="MrDuckMutedCheck" Header="Mute" IsCheckable="True" 
                               Checked="MuteMrDuck_Checked" Unchecked="MuteMrDuck_Checked"/>
+                    
                     <Separator />
                     <MenuItem Header="QUACK!!!" Click="PlayQuack_Click" />
                     <Separator/>
