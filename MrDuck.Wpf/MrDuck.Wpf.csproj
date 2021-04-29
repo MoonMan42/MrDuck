@@ -9,17 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\newDuck.gif" />
     <None Remove="Images\rubberDuck2.png" />
     <None Remove="SoundEffects\Quack.wav" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\newDuck.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\rubberDuck2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SoundEffects\Quack.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

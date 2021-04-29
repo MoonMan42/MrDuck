@@ -58,7 +58,7 @@ namespace MrDuck.Wpf
         {
             Random gen = new Random();
 
-            MouseService.MoveMouse(gen.Next(-25, 25), gen.Next(-25, 25));
+            MouseService.MoveMouse(gen.Next(-80, 80), gen.Next(-80, 80));
         }
 
 

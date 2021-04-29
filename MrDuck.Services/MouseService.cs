@@ -1,5 +1,7 @@
 ﻿
 
+using System.Threading.Tasks;
+
 namespace MrDuck.Services
 {
     public class MouseService
@@ -33,5 +35,7 @@ namespace MrDuck.Services
             SetCursorPos(x + moveX, y + moveY);
 
         }
+
+
     }
 }
