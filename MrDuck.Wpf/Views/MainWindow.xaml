@@ -35,5 +35,8 @@
             </Image.ContextMenu>
         </Image>
 
+        <!--<Image x:Name="muteOption" Visibility="{Binding Source={x:Static local:MrDuckSettings.Default}, Path=IsMrDuckMuted}"  Source="/Images/volume_off.png" Width="20" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               Margin="0 40 0 0"/>-->
     </Grid>
 </Window>
