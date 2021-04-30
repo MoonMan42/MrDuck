@@ -20,13 +20,13 @@
                 <ContextMenu>
                     <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 
                               Checked="MrDuckStayAwake_Checked" Unchecked="MrDuckStayAwake_Checked" />
-                    
+
                     <MenuItem x:Name="MrDuckFakeWorkCheck" Header="Fake Work" 
                               Click="MrDuckFakeWork_Clicked"/>
 
                     <MenuItem x:Name="MrDuckMutedCheck" Header="Mute" IsCheckable="True"
                               Checked="MuteMrDuck_Checked" Unchecked="MuteMrDuck_Checked"/>
-                    
+
                     <Separator />
                     <MenuItem Header="QUACK!!!" Click="PlayQuack_Click" />
                     <Separator/>
@@ -34,9 +34,5 @@
                 </ContextMenu>
             </Image.ContextMenu>
         </Image>
-
-        <!--<Image x:Name="muteOption" Visibility="{Binding Source={x:Static local:MrDuckSettings.Default}, Path=IsMrDuckMuted}"  Source="/Images/volume_off.png" Width="20" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
-               Margin="0 40 0 0"/>-->
     </Grid>
 </Window>

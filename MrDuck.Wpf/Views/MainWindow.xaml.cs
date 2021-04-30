@@ -108,6 +108,9 @@ namespace MrDuck.Wpf
                     case "Jumping":
                         source = _duckAnimations["Jumping"];
                         break;
+                    case "Running":
+                        source = _duckAnimations["Running"];
+                        break;
                 }
             }
             else
@@ -137,7 +140,7 @@ namespace MrDuck.Wpf
                     PlayQuack();
                 }
 
-                UpdateGif("Jumping");
+                UpdateGif("Running");
 
                 this.DragMove();
             }
