@@ -5,12 +5,15 @@ using System.ComponentModel;
 using System.Media;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using WpfAnimatedGif;
 
 namespace MrDuck.Wpf
 {
 
     // gifs are from https://opengameart.org/content/character-spritesheet-duck
+    // play gifs https://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
 
 
 
@@ -19,13 +22,15 @@ namespace MrDuck.Wpf
 
         Dictionary<string, string> _duckAnimations = new Dictionary<string, string>
         {
-            {"crouching", "./Images/Gifs/Crouching.gif" },
-            {"dead", "./Images/Gifs/Dead.gif" },
-            {"idle", "./Images/Gifs/Idle.gif" },
-            {"jumping", "./Images/Gifs/Jumping.gif" },
-            {"running", "./Images/Gifs/Running.gif" },
-            {"walking", "./Images/Gifs/Walking.gif" },
+            {"Crouching", @"../Images/Gifs/Crouching.gif" },
+            {"Dead", @"../Images/Dead.png" },
+            {"Idle", @"../Images/Gifs/Idle.gif" },
+            {"Jumping", @"../Images/Jumping.png" },
+            {"Running", @"../Images/Gifs/Running.gif" },
+            {"Walking", @"../Images/Gifs/Walking.gif" },
         };
+
+        private string duckState = "idle";
 
         private DispatcherTimer _timer;
 
@@ -74,13 +79,52 @@ namespace MrDuck.Wpf
         }
 
 
-
+        #region Audio
         private void PlayQuack()
         {
             SoundPlayer player = new SoundPlayer(@"./SoundEffects/Quack.wav");
             player.Play();
 
         }
+
+        #endregion
+
+
+        #region Image Control
+
+        // update the image 
+        private void UpdateGif(string dState)
+        {
+            duckState = dState;
+            string source = _duckAnimations["Idle"];
+
+            if (!MrDuckSettings.Default.IsMrDuckStayAwake)
+            {
+                switch (duckState)
+                {
+                    case "Idle":
+                        source = _duckAnimations["Idle"];
+                        break;
+                    case "Jumping":
+                        source = _duckAnimations["Jumping"];
+                        break;
+                }
+            }
+            else
+            {
+                source = _duckAnimations["Dead"];
+            }
+
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(source, UriKind.Relative);
+            image.EndInit();
+            ImageBehavior.SetAnimatedSource(duckImage, image);
+
+        }
+
+
+        #endregion
 
         #region UI
         // Move the window
@@ -93,8 +137,13 @@ namespace MrDuck.Wpf
                     PlayQuack();
                 }
 
+                UpdateGif("Jumping");
+
                 this.DragMove();
             }
+
+            // reset back to idle
+            UpdateGif("Idle");
         }
 
         private void StopFakeWork_KeyDown(object sender, KeyEventArgs e)
@@ -114,17 +163,22 @@ namespace MrDuck.Wpf
             {
                 MrDuckSettings.Default.IsMrDuckStayAwake = false;
                 PowerHelper.ResetSystemDefault();
+
+                UpdateGif("Idle");
+
             }
             else
             {
                 MrDuckSettings.Default.IsMrDuckStayAwake = true;
                 PowerHelper.ForceSystemAwake();
+
+                UpdateGif("Dead");
             }
 
             MrDuckSettings.Default.Save();
         }
 
-        private void MrDuckFakeWork_Checked(object sender, RoutedEventArgs e)
+        private void MrDuckFakeWork_Clicked(object sender, RoutedEventArgs e)
         {
             if (MrDuckFakeWorkCheck.IsChecked)
             {

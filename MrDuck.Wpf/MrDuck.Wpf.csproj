@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Dead.png" />
     <None Remove="Images\duckIcon.ico" />
     <None Remove="Images\Gifs\Crouching.gif" />
     <None Remove="Images\Gifs\Dead.gif" />
@@ -18,11 +19,15 @@
     <None Remove="Images\Gifs\Running.gif" />
     <None Remove="Images\Gifs\Thumbs.db" />
     <None Remove="Images\Gifs\Walking.gif" />
+    <None Remove="Images\Jumping.png" />
     <None Remove="Images\Thumbs.db" />
     <None Remove="SoundEffects\Quack.wav" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Dead.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\duckIcon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
@@ -42,6 +47,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Gifs\Walking.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Jumping.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SoundEffects\Quack.wav">
