@@ -1,5 +1,6 @@
 ﻿using MrDuck.Services;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Media;
 using System.Windows;
@@ -9,11 +10,22 @@ using System.Windows.Threading;
 namespace MrDuck.Wpf
 {
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // gifs are from https://opengameart.org/content/character-spritesheet-duck
+
+
+
     public partial class MainWindow : Window
     {
+
+        Dictionary<string, string> _duckAnimations = new Dictionary<string, string>
+        {
+            {"crouching", "./Images/Gifs/Crouching.gif" },
+            {"dead", "./Images/Gifs/Dead.gif" },
+            {"idle", "./Images/Gifs/Idle.gif" },
+            {"jumping", "./Images/Gifs/Jumping.gif" },
+            {"running", "./Images/Gifs/Running.gif" },
+            {"walking", "./Images/Gifs/Walking.gif" },
+        };
 
         private DispatcherTimer _timer;
 

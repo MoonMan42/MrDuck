@@ -12,9 +12,10 @@
         MouseDown="MoveWindow_MouseDown"
         KeyDown="StopFakeWork_KeyDown"
         Background="Transparent"
-         Height="120" Width="100">
+         Height="100" Width="100">
     <Grid>
-        <Image gif:ImageBehavior.AnimatedSource="/Images/newDuck.gif" >
+        <Image gif:ImageBehavior.AnimatedSource="/Images/Gifs/Idle.gif" 
+               HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 

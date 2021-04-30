@@ -4,22 +4,45 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Images\duckIcon.ico</ApplicationIcon>
+    <ApplicationIcon>duckicon2.ico</ApplicationIcon>
     <AssemblyName>MrDuck</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\newDuck.gif" />
-    <None Remove="Images\rubberDuck2.png" />
+    <None Remove="Images\duckIcon.ico" />
+    <None Remove="Images\Gifs\Crouching.gif" />
+    <None Remove="Images\Gifs\Dead.gif" />
+    <None Remove="Images\Gifs\Idle.gif" />
+    <None Remove="Images\Gifs\Idle_icon.gif" />
+    <None Remove="Images\Gifs\Jumping.gif" />
+    <None Remove="Images\Gifs\Running.gif" />
+    <None Remove="Images\Gifs\Thumbs.db" />
+    <None Remove="Images\Gifs\Walking.gif" />
+    <None Remove="Images\Thumbs.db" />
     <None Remove="SoundEffects\Quack.wav" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\newDuck.gif">
+    <Content Include="Images\duckIcon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gifs\Crouching.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\rubberDuck2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Images\Gifs\Dead.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gifs\Idle.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gifs\Jumping.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gifs\Running.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gifs\Walking.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SoundEffects\Quack.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -47,10 +70,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>MrDuckSettings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\Gifs\" />
   </ItemGroup>
 
 </Project>
