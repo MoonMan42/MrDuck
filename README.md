@@ -4,7 +4,7 @@
 
 Light program used to keep your computer up and running. 
 
-Belowe is the code for keeping the computer up and running and added ontop are a set of images/gifs and sound effects.
+Below is the code for keeping the computer up and running and added ontop are a set of images/gifs and sound effects.
 
 ```
  public class PowerHelper
