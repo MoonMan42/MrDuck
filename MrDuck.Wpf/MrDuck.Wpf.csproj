@@ -21,7 +21,6 @@
     <None Remove="Images\Gifs\Walking.gif" />
     <None Remove="Images\Jumping.png" />
     <None Remove="Images\Thumbs.db" />
-    <None Remove="Images\volume_off.png" />
     <None Remove="SoundEffects\Quack.wav" />
   </ItemGroup>
 
@@ -51,9 +50,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Jumping.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\volume_off.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SoundEffects\Quack.wav">

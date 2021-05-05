@@ -34,17 +34,5 @@ namespace MrDuck.Wpf {
                 this["IsMrDuckMuted"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool IsMrDuckStayAwake {
-            get {
-                return ((bool)(this["IsMrDuckStayAwake"]));
-            }
-            set {
-                this["IsMrDuckStayAwake"] = value;
-            }
-        }
     }
 }

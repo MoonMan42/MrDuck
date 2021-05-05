@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Media;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -52,11 +53,10 @@ namespace MrDuck.Wpf
         private void StartUp()
         {
             // stay awake
-            if (!MrDuckSettings.Default.IsMrDuckStayAwake)
-            {
-                MrDuckStayAwakeCheck.IsChecked = true;
-                PowerHelper.ForceSystemAwake();
-            }
+
+            MrDuckStayAwakeCheck.IsChecked = true;
+            PowerHelper.ForceSystemAwake();
+
 
             // muted duck
             if (!MrDuckSettings.Default.IsMrDuckMuted)
@@ -84,7 +84,6 @@ namespace MrDuck.Wpf
         {
             SoundPlayer player = new SoundPlayer(@"./SoundEffects/Quack.wav");
             player.Play();
-
         }
 
         #endregion
@@ -98,7 +97,7 @@ namespace MrDuck.Wpf
             duckState = dState;
             string source = _duckAnimations["Idle"];
 
-            if (!MrDuckSettings.Default.IsMrDuckStayAwake)
+            if (MrDuckStayAwakeCheck.IsChecked)
             {
                 switch (duckState)
                 {
@@ -118,6 +117,7 @@ namespace MrDuck.Wpf
                 source = _duckAnimations["Dead"];
             }
 
+            //update the image
             var image = new BitmapImage();
             image.BeginInit();
             image.UriSource = new Uri(source, UriKind.Relative);
@@ -164,21 +164,17 @@ namespace MrDuck.Wpf
         {
             if (MrDuckStayAwakeCheck.IsChecked)
             {
-                MrDuckSettings.Default.IsMrDuckStayAwake = false;
-                PowerHelper.ResetSystemDefault();
+                PowerHelper.ForceSystemAwake();
 
                 UpdateGif("Idle");
 
             }
             else
             {
-                MrDuckSettings.Default.IsMrDuckStayAwake = true;
-                PowerHelper.ForceSystemAwake();
+                PowerHelper.ResetSystemDefault();
 
                 UpdateGif("Dead");
             }
-
-            MrDuckSettings.Default.Save();
         }
 
         private void MrDuckFakeWork_Clicked(object sender, RoutedEventArgs e)
