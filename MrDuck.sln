@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrDuck.Wpf", "MrDuck.Wpf\MrDuck.Wpf.csproj", "{E02F8414-0FAE-4E0F-A027-822807C6DAFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrDuck.Services", "MrDuck.Services\MrDuck.Services.csproj", "{F2D5D532-2AE6-4100-8581-F982CDCC7F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrDuck.Services", "MrDuck.Services\MrDuck.Services.csproj", "{F2D5D532-2AE6-4100-8581-F982CDCC7F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrDuck.Worm", "MrDuck.Worm\MrDuck.Worm.csproj", "{C7BE355B-C71B-4486-9688-F45FC193CBD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F2D5D532-2AE6-4100-8581-F982CDCC7F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D5D532-2AE6-4100-8581-F982CDCC7F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D5D532-2AE6-4100-8581-F982CDCC7F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BE355B-C71B-4486-9688-F45FC193CBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BE355B-C71B-4486-9688-F45FC193CBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BE355B-C71B-4486-9688-F45FC193CBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BE355B-C71B-4486-9688-F45FC193CBD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
