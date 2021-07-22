@@ -39,6 +39,10 @@ namespace MrDuck.Wpf
         {
             InitializeComponent();
 
+            // load last open position
+            duckWindow.Left = MrDuckSettings.Default.LastYSaved;
+            duckWindow.Top = MrDuckSettings.Default.LastXSaved;
+
             StartUp();
 
             PlayQuack(); // play quack at startup. 
@@ -46,7 +50,14 @@ namespace MrDuck.Wpf
 
         protected override void OnClosing(CancelEventArgs e)
         {
+            // restart power settings
             PowerHelper.ResetSystemDefault();
+
+            // capture last saved location
+            MrDuckSettings.Default.LastYSaved = duckWindow.Left;
+            MrDuckSettings.Default.LastXSaved = duckWindow.Top;
+            MrDuckSettings.Default.Save();
+
             base.OnClosing(e);
         }
 
@@ -220,11 +231,9 @@ namespace MrDuck.Wpf
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
+
             Close();
         }
-
-
-
 
         #endregion
 

@@ -12,7 +12,7 @@ namespace MrDuck.Wpf {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class MrDuckSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static MrDuckSettings defaultInstance = ((MrDuckSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new MrDuckSettings())));
@@ -32,6 +32,30 @@ namespace MrDuck.Wpf {
             }
             set {
                 this["IsMrDuckMuted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public double LastXSaved {
+            get {
+                return ((double)(this["LastXSaved"]));
+            }
+            set {
+                this["LastXSaved"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public double LastYSaved {
+            get {
+                return ((double)(this["LastYSaved"]));
+            }
+            set {
+                this["LastYSaved"] = value;
             }
         }
     }

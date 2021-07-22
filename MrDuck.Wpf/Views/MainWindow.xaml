@@ -11,11 +11,13 @@
         WindowStyle="None"
         MouseDown="MoveWindow_MouseDown"
         KeyDown="StopFakeWork_KeyDown"
-        Background="Transparent"
-         Height="100" Width="100">
+        Background="Transparent"        
+         Height="100" Width="100"
+        x:Name="duckWindow">
     <Grid>
         <Image x:Name="duckImage" gif:ImageBehavior.AnimatedSource="/Images/Gifs/Idle.gif" 
-               HorizontalAlignment="Center" VerticalAlignment="Center">
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               ToolTip="It is an act! Fake it!">
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 
