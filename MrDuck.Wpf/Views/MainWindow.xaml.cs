@@ -39,9 +39,6 @@ namespace MrDuck.Wpf
         {
             InitializeComponent();
 
-            // load last open position
-            duckWindow.Left = MrDuckSettings.Default.LastYSaved;
-            duckWindow.Top = MrDuckSettings.Default.LastXSaved;
 
             StartUp();
 
@@ -53,10 +50,7 @@ namespace MrDuck.Wpf
             // restart power settings
             PowerHelper.ResetSystemDefault();
 
-            // capture last saved location
-            MrDuckSettings.Default.LastYSaved = duckWindow.Left;
-            MrDuckSettings.Default.LastXSaved = duckWindow.Top;
-            MrDuckSettings.Default.Save();
+
 
             base.OnClosing(e);
         }

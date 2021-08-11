@@ -34,29 +34,5 @@ namespace MrDuck.Wpf {
                 this["IsMrDuckMuted"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public double LastXSaved {
-            get {
-                return ((double)(this["LastXSaved"]));
-            }
-            set {
-                this["LastXSaved"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public double LastYSaved {
-            get {
-                return ((double)(this["LastYSaved"]));
-            }
-            set {
-                this["LastYSaved"] = value;
-            }
-        }
     }
 }

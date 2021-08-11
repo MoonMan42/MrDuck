@@ -5,11 +5,5 @@
     <Setting Name="IsMrDuckMuted" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="LastXSaved" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">15</Value>
-    </Setting>
-    <Setting Name="LastYSaved" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">15</Value>
-    </Setting>
   </Settings>
 </SettingsFile>
