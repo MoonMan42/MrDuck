@@ -42,6 +42,8 @@ namespace MrDuck.Wpf
 
             StartUp();
 
+            SetToolTipOfTheDay();
+
             PlayQuack(); // play quack at startup. 
         }
 
@@ -74,6 +76,22 @@ namespace MrDuck.Wpf
             _timer.Tick += new EventHandler(MoveMouse_Tick);
             _timer.Interval = new TimeSpan(0, 0, 1); // every 1 sec
         }
+
+        private void SetToolTipOfTheDay()
+        {
+            // read the motivational text
+            List<string> motivationList = new List<string>();
+
+            foreach (string line in System.IO.File.ReadLines(@"Documents\Motivational.txt"))
+            {
+                motivationList.Add(line);
+            }
+
+            Random gen = new Random();
+            duckImage.ToolTip = motivationList[gen.Next(motivationList.Count - 1)];
+
+        }
+
 
         // move the mouse
         private void MoveMouse_Tick(object sender, EventArgs e)
