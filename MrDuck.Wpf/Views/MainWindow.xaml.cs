@@ -88,7 +88,7 @@ namespace MrDuck.Wpf
             }
 
             Random gen = new Random();
-            duckImage.ToolTip = motivationList[gen.Next(motivationList.Count - 1)];
+            duckImage.ToolTip = motivationList[gen.Next(motivationList.Count)];
 
         }
 
