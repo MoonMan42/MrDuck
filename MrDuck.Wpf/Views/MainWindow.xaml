@@ -14,7 +14,8 @@
          Height="100" Width="100">
     <Grid>
         <Image x:Name="duckImage" gif:ImageBehavior.AnimatedSource="/Images/Gifs/Idle.gif" 
-               HorizontalAlignment="Center" VerticalAlignment="Center">
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               >
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 

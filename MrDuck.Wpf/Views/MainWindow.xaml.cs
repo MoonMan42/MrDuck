@@ -37,14 +37,21 @@ namespace MrDuck.Wpf
         {
             InitializeComponent();
 
+
             StartUp();
+
+            SetToolTipOfTheDay();
 
             PlayQuack(); // play quack at startup. 
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
+            // restart power settings
             PowerHelper.ResetSystemDefault();
+
+
+
             base.OnClosing(e);
         }
 
@@ -63,6 +70,26 @@ namespace MrDuck.Wpf
             }            
         }
 
+        private void SetToolTipOfTheDay()
+        {
+            // read the motivational text
+            List<string> motivationList = new List<string>();
+
+            foreach (string line in System.IO.File.ReadLines(@"Documents\Motivational.txt"))
+            {
+                motivationList.Add(line);
+            }
+
+            Random gen = new Random();
+            duckImage.ToolTip = motivationList[gen.Next(motivationList.Count)];
+
+        }
+
+
+        // move the mouse
+        private void MoveMouse_Tick(object sender, EventArgs e)
+        {
+            Random gen = new Random();
 
 
         #region Audio
@@ -182,11 +209,9 @@ namespace MrDuck.Wpf
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
+
             Close();
         }
-
-
-
 
         #endregion
 

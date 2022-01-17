@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Documents\Motivational.txt" />
     <None Remove="Images\Dead.png" />
     <None Remove="Images\duckIcon.ico" />
     <None Remove="Images\Gifs\Crouching.gif" />
@@ -63,6 +64,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MrDuck.Services\MrDuck.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Documents\Motivational.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
