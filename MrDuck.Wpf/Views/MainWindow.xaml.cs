@@ -33,8 +33,6 @@ namespace MrDuck.Wpf
 
         private string duckState = "idle";
 
-        private DispatcherTimer _timer;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -62,21 +60,9 @@ namespace MrDuck.Wpf
             if (!MrDuckSettings.Default.IsMrDuckMuted)
             {
                 MrDuckMutedCheck.IsChecked = true;
-            }
-
-            // dispatch timer for Fake worker
-            _timer = new DispatcherTimer();
-            _timer.Tick += new EventHandler(MoveMouse_Tick);
-            _timer.Interval = new TimeSpan(0, 0, 1); // every 1 sec
+            }            
         }
 
-        // move the mouse
-        private void MoveMouse_Tick(object sender, EventArgs e)
-        {
-            Random gen = new Random();
-
-            MouseService.MoveMouse(gen.Next(-80, 80), gen.Next(-80, 80));
-        }
 
 
         #region Audio
@@ -149,14 +135,7 @@ namespace MrDuck.Wpf
             UpdateGif("Idle");
         }
 
-        private void StopFakeWork_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.F9 && MrDuckFakeWorkCheck.IsChecked)
-            {
-                _timer.Stop();
-                MrDuckFakeWorkCheck.IsChecked = false;
-            }
-        }
+        
 
         #region Image Menu
 
@@ -177,24 +156,7 @@ namespace MrDuck.Wpf
             }
         }
 
-        private void MrDuckFakeWork_Clicked(object sender, RoutedEventArgs e)
-        {
-            if (MrDuckFakeWorkCheck.IsChecked)
-            {
-                var result = MessageBox.Show("Start to fake your work and press, F9 to stop.", "Are you sure!", MessageBoxButton.YesNo);
-                // run MouseMover timer event
-
-                if (result == MessageBoxResult.Yes)
-                    _timer.Start();
-
-            }
-            else
-            {
-                // stop mousemover
-                _timer.Stop();
-
-            }
-        }
+      
 
         private void MuteMrDuck_Checked(object sender, RoutedEventArgs e)
         {
