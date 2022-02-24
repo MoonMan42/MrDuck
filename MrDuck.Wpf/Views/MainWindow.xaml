@@ -19,14 +19,13 @@
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 
-                              Checked="MrDuckStayAwake_Checked" Unchecked="MrDuckStayAwake_Checked" />
-
-                  
+                              Checked="MrDuckStayAwake_Checked" Unchecked="MrDuckStayAwake_Checked" />                 
 
                     <MenuItem x:Name="MrDuckMutedCheck" Header="Mute" IsCheckable="True"
                               Checked="MuteMrDuck_Checked" Unchecked="MuteMrDuck_Checked"/>
 
                     <Separator />
+                    <MenuItem Header="Motivation" Click="OpenMotivational_Click" />
                     <MenuItem Header="QUACK!!!" Click="PlayQuack_Click" />
                     <Separator/>
                     <MenuItem Header="Close" Click="Close_Click" />

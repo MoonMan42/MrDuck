@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Media;
 using System.Threading;
 using System.Windows;
@@ -67,7 +68,7 @@ namespace MrDuck.Wpf
             if (!MrDuckSettings.Default.IsMrDuckMuted)
             {
                 MrDuckMutedCheck.IsChecked = true;
-            }            
+            }
         }
 
         private void SetToolTipOfTheDay()
@@ -91,6 +92,7 @@ namespace MrDuck.Wpf
         {
             Random gen = new Random();
 
+        }
 
         #region Audio
         private void PlayQuack()
@@ -162,7 +164,7 @@ namespace MrDuck.Wpf
             UpdateGif("Idle");
         }
 
-        
+
 
         #region Image Menu
 
@@ -183,7 +185,7 @@ namespace MrDuck.Wpf
             }
         }
 
-      
+
 
         private void MuteMrDuck_Checked(object sender, RoutedEventArgs e)
         {
@@ -199,6 +201,18 @@ namespace MrDuck.Wpf
             MrDuckSettings.Default.Save();
 
         }
+
+        private void OpenMotivational_Click(object sender, RoutedEventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo.FileName = "CMD.EXE";
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = @"/c Documents\Motivational.txt";
+            p.Start();
+        }
+
+
         // seperator
         private void PlayQuack_Click(object sender, RoutedEventArgs e)
         {
@@ -212,6 +226,7 @@ namespace MrDuck.Wpf
 
             Close();
         }
+
 
         #endregion
 
