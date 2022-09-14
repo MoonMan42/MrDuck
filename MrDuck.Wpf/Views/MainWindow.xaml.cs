@@ -16,7 +16,7 @@ namespace MrDuck.Wpf
 
     // gifs are from https://opengameart.org/content/character-spritesheet-duck
     // play gifs https://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
-
+    // motivational quote https://evilinsult.com/generate_insult.php?lang=en&type=json
 
 
     public partial class MainWindow : Window
@@ -71,28 +71,25 @@ namespace MrDuck.Wpf
             }
         }
 
-        private void SetToolTipOfTheDay()
+        private async void SetToolTipOfTheDay()
         {
             // read the motivational text
-            List<string> motivationList = new List<string>();
+            //List<string> motivationList = new List<string>();
 
-            foreach (string line in System.IO.File.ReadLines(@"Documents\Motivational.txt"))
-            {
-                motivationList.Add(line);
-            }
+            //foreach (string line in System.IO.File.ReadLines(@"Documents\Motivational.txt"))
+            //{
+            //    motivationList.Add(line);
+            //}
 
-            Random gen = new Random();
-            duckImage.ToolTip = motivationList[gen.Next(motivationList.Count)];
+            //Random gen = new Random();
+            //duckImage.ToolTip = motivationList[gen.Next(motivationList.Count)];
 
+            ApiHelper.InitilizeClient();
+
+            var quote = await QuoteProcessor.LoadQuote();
+            duckImage.ToolTip = quote.Insult;
         }
 
-
-        // move the mouse
-        private void MoveMouse_Tick(object sender, EventArgs e)
-        {
-            Random gen = new Random();
-
-        }
 
         #region Audio
         private void PlayQuack()
