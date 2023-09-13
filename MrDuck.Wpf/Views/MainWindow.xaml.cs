@@ -1,4 +1,4 @@
-﻿using MrDuck.Services;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +49,7 @@ namespace MrDuck.Wpf
         protected override void OnClosing(CancelEventArgs e)
         {
             // restart power settings
-            PowerHelper.ResetSystemDefault();
+            //PowerHelper.ResetSystemDefault();
 
 
 
@@ -61,7 +61,7 @@ namespace MrDuck.Wpf
             // stay awake
 
             MrDuckStayAwakeCheck.IsChecked = true;
-            PowerHelper.ForceSystemAwake();
+            //PowerHelper.ForceSystemAwake();
 
 
             // muted duck
@@ -172,14 +172,14 @@ namespace MrDuck.Wpf
         {
             if (MrDuckStayAwakeCheck.IsChecked)
             {
-                PowerHelper.ForceSystemAwake();
+                //PowerHelper.ForceSystemAwake();
 
                 UpdateGif("Idle");
 
             }
             else
             {
-                PowerHelper.ResetSystemDefault();
+                //PowerHelper.ResetSystemDefault();
 
                 UpdateGif("Dead");
             }

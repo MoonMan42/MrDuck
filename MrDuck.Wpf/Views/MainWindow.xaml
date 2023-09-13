@@ -18,7 +18,7 @@
                >
             <Image.ContextMenu>
                 <ContextMenu>
-                    <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Stay Awake" IsCheckable="True" 
+                    <MenuItem x:Name="MrDuckStayAwakeCheck" Header="Awake" IsCheckable="True" 
                               Checked="MrDuckStayAwake_Checked" Unchecked="MrDuckStayAwake_Checked" />                 
 
                     <MenuItem x:Name="MrDuckMutedCheck" Header="Mute" IsCheckable="True"

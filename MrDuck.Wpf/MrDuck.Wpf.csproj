@@ -6,6 +6,8 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>duckicon2.ico</ApplicationIcon>
     <AssemblyName>MrDuck</AssemblyName>
+    <PackageLicenseExpression>AFL-3.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -60,10 +62,6 @@
 
   <ItemGroup>
     <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MrDuck.Services\MrDuck.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
